@@ -9,15 +9,42 @@
   <meta name="robots" content="index,follow">
   <meta name="referrer" content="strict-origin-when-cross-origin">
    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/jichang2026/jichang2026.github.io/refs/heads/main/pic/favicon.png">
-  <style>
-    body{
+    <style>
+:root{
+  --bg:#f7f8f5;
+  --card:#fdfdfc;
+  --text:#4b5563;
+  --heading:#1f2937;
+  --primary:#2563eb;
+  --primary-light:#eef4ff;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
   margin:0;
   min-height:100vh;
-  background:#f7f8f5;
-  color:#4b5563;
-  font-family:-apple-system,BlinkMacSystemFont,
-  "Segoe UI",Roboto,"PingFang SC",
-  "Microsoft YaHei",sans-serif;
+  padding:24px;
+  background:
+    radial-gradient(
+      circle at top,
+      #ffffff 0%,
+      #f7f8f5 60%,
+      #f3f5f7 100%
+    );
+  color:var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -26,8 +53,9 @@
 .card{
   width:100%;
   max-width:760px;
-  background:#fdfdfc;
+  background:var(--card);
   border-radius:20px;
+  border:1px solid rgba(0,0,0,.05);
   box-shadow:
     0 10px 30px rgba(15,23,42,.06),
     0 2px 8px rgba(15,23,42,.03);
@@ -38,56 +66,126 @@ h1{
   margin:0 0 14px;
   font-size:28px;
   font-weight:700;
-  color:#2563eb;
+  line-height:1.4;
   letter-spacing:.3px;
+  color:var(--primary);
 }
 
 h2{
   margin:30px 0 12px;
   font-size:18px;
   font-weight:600;
-  color:#1f2937;
+  line-height:1.5;
+  color:var(--heading);
 }
 
 p{
   margin:0 0 18px;
-  color:#4b5563;
-  line-height:1.85;
-  font-size:15px;
+  font-size:16px;
+  line-height:1.9;
+  color:var(--text);
+}
+
+strong{
+  color:var(--heading);
+  font-weight:600;
 }
 
 .btn{
   display:inline-block;
   padding:12px 24px;
   border-radius:999px;
-  background:#2563eb;
+  background:#3b82f6;
   color:#fff;
   text-decoration:none;
+  font-size:16px;
   font-weight:600;
-  font-size:15px;
-  transition:.2s;
-  box-shadow:0 4px 12px rgba(37,99,235,.18);
+  transition:all .2s ease;
+  box-shadow:0 4px 12px rgba(59,130,246,.18);
 }
 
 .btn:hover{
   transform:translateY(-1px);
-  box-shadow:0 8px 20px rgba(37,99,235,.22);
+  box-shadow:0 8px 20px rgba(59,130,246,.22);
 }
 
 .btn.secondary{
-  background:#eef4ff;
-  color:#2563eb;
+  background:var(--primary-light);
+  color:var(--primary);
   box-shadow:none;
   margin-left:12px;
+}
+
+.btn.secondary:hover{
+  background:#e5eeff;
 }
 
 .note{
   margin-top:26px;
   font-size:13px;
-  color:#6b7280;
   line-height:1.8;
+  color:var(--muted);
 }
-  </style>
+
+.note div{
+  margin-bottom:4px;
+}
+
+.related{
+  margin-top:25px;
+  padding-top:15px;
+  border-top:1px dashed var(--border);
+}
+
+.related-title{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+
+.related-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.related-links a{
+  font-size:13px;
+  color:var(--primary);
+  text-decoration:none;
+  transition:opacity .2s;
+}
+
+.related-links a:hover{
+  opacity:.75;
+}
+
+@media (max-width:768px){
+  body{
+    padding:16px;
+  }
+
+  .card{
+    padding:28px 24px;
+    border-radius:16px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  .btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    margin-bottom:12px;
+  }
+
+  .btn.secondary{
+    margin-left:0;
+  }
+}
+</style>
 </head>
 <body>
   <div class="card">
